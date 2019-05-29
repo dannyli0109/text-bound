@@ -23,14 +23,18 @@ function draw() {
   // textSize(128)
   // textFont(font)
   // text('コラボレーション', width / 2, height / 2)
-  translate((width - bounds.w) / 2, (height + bounds.h) / 2)
+  // translate((width - bounds.w) / 2, (height + bounds.h) / 2)
   stroke(255)
   noFill()
   strokeWeight(1)
   // console.log(pts)
   // rectMode(LEFT)
   pts = pts.map(pt => {
-    return { x: pt.x, y: pt.y }
+    return { x: pt.x + (width - bounds.w) / 2, y: pt.y + (height + bounds.h) / 2 }
+  })
+
+  pts.forEach(pt => {
+    point(pt.x, pt.y)
   })
 
   console.log(pts)
